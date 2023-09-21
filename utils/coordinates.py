@@ -4,7 +4,7 @@ import numpy as np
 class RadialCoordinates:
     """
     1d coordinate system that has the same spacing in position 
-    domain and fourier domain. [0, R], where R = np.sqrt
+    domain and fourier domain. [0, R], where R = np.sqrt(n)
     """
     def __init__(self, n):
         self.n = n

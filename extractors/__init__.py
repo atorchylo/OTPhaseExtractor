@@ -1,3 +1,4 @@
 from extractors.GSphase import GerchbergSaxton2d
 from extractors.OTphase import OptimalTransport1d, FlattenOptimalTransport2d
 from extractors.SPphase import SpotlightSolution1d
+from extractors.COTphase import ContinuousOptimalTransport2d

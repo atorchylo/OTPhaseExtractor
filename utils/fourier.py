@@ -1,3 +1,4 @@
+import numpy as np
 from scipy.fftpack import fft2, ifft2
 from scipy.fftpack import fftshift, ifftshift
 
@@ -19,3 +20,13 @@ def IFFT2(fourrier_data):
     """
     position_data = fftshift(ifft2(ifftshift(fourrier_data)))
     return position_data
+
+def fourier_propagation(input_intensity, phase):
+    """
+    Computes fourier image for a given intensity and phase 
+    """
+    input_amplitude = np.sqrt(input_intensity / input_intensity.sum())
+    output_amplitude = np.abs(FFT2(input_amplitude * np.exp(1j * phase)))
+    output_intensity = output_amplitude ** 2
+    output_intensity = output_intensity / (input_amplitude.shape[0] * input_amplitude.shape[1])
+    return output_intensity

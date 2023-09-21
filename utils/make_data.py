@@ -4,6 +4,9 @@ import numpy as np
 def make_gauss(r, sigma):
     return np.exp(-(r**2)/(sigma**2))
 
+def make_gauss_cartesian(x, y, x0, y0, sigma):
+    return np.exp(-((x - x0)**2 + (y - y0)**2)/(sigma**2))
+
 def make_donut(r, R, sigma):
     return (1 + (r**2 - R**2)**2 / sigma**4)**(-1)
 
